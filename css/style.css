@@ -46,7 +46,6 @@
 	font-style: normal;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -56,7 +55,6 @@
 
 .container {
     width: 1000px;
-    border: 1px solid #2c2c93;
     margin: 0 auto;
 }
 
@@ -98,17 +96,59 @@ header nav ul li {
     margin: 0 15px;
     text-transform: uppercase;
     position: relative;
+    z-index: 3;
 }
 
-.out-list {
+.thisnode {
+    position:relative;
+}
+
+.smallsquare {
     display: none;
+}
+
+.out-list ul li {
+    text-transform: capitalize;
+}
+
+header nav ul li .out-list {
+    display:none;
+}
+/* HEADER HOVER */
+li:hover .out-list {
+    display: block;
     position: absolute;
+    width: 120px;
+    height: 80px;
+    top: 40px;
+    left:-20%;
+    right:0;
+    bottom: 0;
+    margin-bottom: 50px;
+    list-style-type: none;
+    background-color: black;
+    color: white;
+    padding-top: 10px;
+    text-transform: lowercase;
 }
 
-header nav ul li:hover {
-    color:red;
+li:hover .smallsquare{
+    display:block;
+    position: absolute;
+    width:20px;
+    height: 20px;
+    background-color: black;
+    transform: rotate(45deg);
+    top: 70px;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    margin: auto 0;
 }
 
+/* KONIEC HEADER HOVER */
+
+/* SEKCJA Z OBRAZKIEM I OPISEM */
 
  section {
     width: 100%;
@@ -118,6 +158,7 @@ header nav ul li:hover {
      background-color: white;
      background-image: linear-gradient(180deg, #fafafa, #d1d0d5);
      position: relative;
+     padding-top: 60px;
 }
 
 .strzalka {
@@ -135,7 +176,6 @@ header nav ul li:hover {
     width: 100%;
     float: left;
 }
-
 
 .preview-right {
     width: 40%;
@@ -211,11 +251,12 @@ p {
     width: 100%;
     margin-top: 20px;
 }
+
 /* ustawienia wewnetrzne sekcji gallery */
 .gallery-image {
     float: left;
     width: 300px;
-    margin-right: 49px;
+    margin-right: 50px;
     position: relative;
 }
 
@@ -256,6 +297,7 @@ h2 {
 .gallery-right .underline {
     width: 50%;
 }
+
 /* filtr na obrazki */
 .opacity {
     position: absolute;
@@ -270,7 +312,6 @@ h2 {
     /*border-bottom: 5px solid #2cc8ac; */
     font-size: 15px;
 }
-
 
 /* ogolne ustawienia sekcji pricing */
 .pricing {
@@ -291,13 +332,58 @@ h2 {
     margin-top: 40px;
     margin-left: 0px;
     margin-bottom: 40px;
-    margin-right: 49px;
+    margin-right: 50px;
     background-color: #f9f9f9;
 }
+
+/*HOVER */
+
+.offer:hover {
+    background-color: #2cc8ac;
+    color:#f5f9f8;
+    border: 1px solid #2cc8ac;
+}
+
+.offer:hover h3{
+    color:#f5f9f8;
+}
+
+.offer:hover .price-wrapper{
+    border-bottom: 0;
+}
+
+.offer:hover .price {
+    border: 0;
+    background-color: #f9f9f9;
+}
+
+.offer:hover .action:nth-of-type(2n+1){
+    background-color: #ffffff;
+    color:#b1b1b1;
+}
+
+.offer:hover .action:nth-of-type(2n){
+    background-color: #f1f1f1;
+    color:#a4a4a4   ;
+}
+
+.offer:hover .action:last-of-type::after{
+    background-color: #ffffff;
+    color: #2cc8ac;
+}
+
+.offer:hover .circle {
+    background-color: #2cc8ac;
+    border: 0;
+}
+
+.offer:hover .circle-grey {
+    background-color: #f9f9f9;
+}
+
+/* koniec HOVER */
+
 /* kolka na srodku */
-
-
-
 .circle {
     position: absolute;
     width: 60px;
@@ -358,6 +444,7 @@ h3 {
     bottom: 0;
     margin: auto;
     text-align: center;
+    background-color: #ffffff;
 }
 
 .price p {
@@ -374,8 +461,6 @@ sup {
     position: relative;
     top: -25px;
     color:#c2c2c2;
-   
-
 }
 
 .price p.msc{
@@ -400,8 +485,6 @@ sup {
     display: block;
     text-align: center;
     line-height: 40px;
-    
-    
 }
 
 .action:nth-of-type(2n+1){
@@ -432,8 +515,6 @@ sup {
 
 /*formularz */
 
-
-
 .content-form .underline {
     width:30%;
     margin-bottom: 20px;
@@ -442,16 +523,17 @@ sup {
 .content-form .inside{
     width: 100%;
     height: 35px;
-    color: #cdcdcd;
     font-size: 20px;
     float: left;
     margin-top: 15px;
     margin-right: 1px;
+    border: 1px solid #2cc8ac;
+    color: #c8c8c8;
 }
 
 textarea{
     height: 225px !important;
-    border: 1px solid #cdcdcd;
+    border: 1px solid #2cc8ac;
 }
 
 .content-form-left {
@@ -461,7 +543,7 @@ textarea{
 }
 
 .content-left {
-    width: 50%;
+    width: 60%;
     height: 340px;
     float: left;
     border: 0px;
@@ -471,18 +553,16 @@ textarea{
 .content-right{
     float: left;
     position: relative;
-    width: 50%;
+    width: 40%;
     height: 340px;
     border: 0px;
 }
-
 
 .content-form-right {
     float: left;
     position: relative;
     width: 100%;
-    height: 340px;
-    
+    height: 340px;    
 }
 
 .content-form img {
@@ -495,10 +575,8 @@ textarea{
     height: 190px;
 }
 
-
-
 .submit {
-    width: 90%;
+    width: 70%;
     height: 50px;
     position: absolute;
     bottom: 0;
@@ -510,8 +588,7 @@ textarea{
     font-size: 30px;
     line-height: 50px;
     border-radius: 10px;
-    border: 0px;
-    
+    border: 0px;  
 }
 
 .check {
@@ -524,16 +601,15 @@ textarea{
     position: relative;
     margin-left: 20%;
     float: left;
-    vertical-align: baseline;
-    
+    vertical-align: baseline;   
 }
 
  .border {
-    width: 50px;
-    height: 45px;
+    width: 52px;
+    height: 47px;
     border: 1px solid #2cc8ac;
     position: relative;
-    
+    margin-left: 60px; 
 }
 
 input[type="checkbox"] {
@@ -561,7 +637,7 @@ input[type="checkbox"] {
     
 
 input[type="checkbox"] + label {
-    background-color: #2cc8ac ;
+    background-color: white;
     height: 45px;
     width: 50px;
     display:inline-block;
@@ -576,7 +652,25 @@ input[type="checkbox"]:checked + label{
     padding: 0 0 0 0px;
 }
 
+/* placeholder */
+::-webkit-input-placeholder {
+   color: #c8c8c8;
+}
 
+:-moz-placeholder { /* Firefox 18- */
+   color: #c8c8c8; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color:  #c8c8c8;
+}
+
+:-ms-input-placeholder {  
+   color: #c8c8c8;  
+}
+
+
+/* Footer */
 footer {
     width: 100%;
     height: 160px;
@@ -615,12 +709,16 @@ footer .footer-social{
     position: absolute;
     display: inline;
     bottom: 50px;
-    right: 300px;
-    
+    right: 300px;  
 } 
 
 footer .footer-social li {
     width: 100px;
     height: 30px;
     display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
